@@ -1,0 +1,336 @@
+# Site settings
+#baseurl = "https://example.org/"
+baseurl = "."
+languageCode = "en-us"
+title = "Mitigateway"
+theme = "hugo-agency-theme"
+
+# Enter your tracking code to enable Google Analytics
+googleAnalytics = "UA-143004297-1"
+
+[params]
+  # You can use Markdown syntax for urls [text](//url.to/source) or
+  # most longer texts.
+  #
+  # All icons using Fontawesome's icon font. Look at fortawesome.github.io/Font-Awesome/icons/
+  # for more icons. The icons are represented by their corresponding
+  # CSS class.
+
+  # To provide some metadata for search engines feel free to add a few
+  # information about you and your website.
+  name = "mitigateway"
+  description = "Protecting the things you care about."
+
+  # Link custom assets relative to /static
+  custom_css = []
+  custom_js  = []
+  favicon    = "favicon.ico"
+
+  # Possibility to disable external/additional fonts
+  # Exception: Fontawesome
+  disableFonts = false
+
+  # 404 error customization
+  [params.error404]
+    heading = "Page couldn't be found"
+    text = "Please visit [this page](/)"
+
+  # Optional piwik tracking
+  #[params.analytics.piwik]
+  #  URL = "https://stats.example.com"
+  #  ID = "42"
+  #  # Track all subdomains with "*.example.com"
+  #  domain = "www.example.com"
+  #  # Optional integrity check hash
+  #  hash = "sha512-RfeD0pacGTqy9m7U6PgehQfS4cc7SIt+e+P+H5e848kEvB/RW84CUGO3O4O3LNbxjevym6KPUZ8muPsMrI8WIw=="
+
+  # Navigation
+  [params.navigation]
+    brand = "M"
+    # Optional logo as brand stored in img/
+    logo = "logoNoName.png"
+    services = "Services"
+    portfolio = "Portfolio"
+    about = "About"
+    team = "Team"
+    contact = "Contact"
+
+    # Add custom links. Those can be pre- and postpended to the default menu above.
+    # Use the weight attribute to order your custom links. Uncomment the example
+    # below and replace the values with your own.
+
+    # prepended links
+    [[menu.prepend]]
+    #url = "https://mitigateway.com"
+    url = "#"
+    name = "Home"
+    weight = 10
+
+    # postpended links
+    [[menu.postpend]]
+    #  url = "http://gohugo.io"
+    #  name = "Hugo"
+    #  weight = 10
+
+
+  # Hero section
+  [params.hero]
+    # To change the background image of the hero, replace 'header-bg.jpg' in
+    # the 'static/img' folder.
+    #title = "mitigateway"
+    subtitle = "We Protect the things you care about"
+    buttonText = "Tell me more"
+
+
+  # Services section
+  [params.services]
+    enable = true
+    title = "Services"
+    subtitle = "While we do many things well, we do these three really well. "
+
+    [[params.services.row]]
+
+    [[params.services.row.list]]
+      icon = "fa-home"
+      title = "Protecting your Home"
+      description = "We help to protect your home, your family and your belongings by identifying risks lurking in your everyday products."
+      url = "#"
+
+    [[params.services.row.list]]
+      icon = "fa-umbrella"
+      title = "Teaching Home 101"
+      description = "We remind you and help schedule the common maintenence items you need to perform in order to keep your family and home safe."
+      url = "#"
+
+    [[params.services.row.list]]
+      icon = "fa-graduation-cap"
+      title = "Lowering your Insurance"
+      description = "By making you a safer home owner, we reduce the likelihood of you making an insurance claim and negotiate for you an insurance premium discount."
+      url = "#"
+
+  # Portfolio section
+  [params.portfolio]
+    enable = false
+    # All projects defined in their own files. You can find example projects
+    # at 'exampleSite/data/projects'. Copy the 'projects' folder into the 'data' directory
+    # at the root of this Hugo site.
+    # For more informtion take a look at the README.
+    title = "Portfolio"
+    subtitle = "Lorem ipsum dolor sit amet consectetur."
+
+    [params.portfolio.modal]
+      client = "Client"
+      date = "Date"
+      category = "Category"
+      buttonText = "Close project"
+
+
+    # About section
+  [params.about]
+    enable = true
+    title = "About"
+    subtitle = "This is the exact and simple story of how our idea came to be."
+    endpoint = "Be part<br>of our<br>story!"
+
+    # The events will be listed from the top to the bottom.
+    # All images are stored under 'static/img/about'.
+    # Replace them with your own.
+    [[params.about.events]]
+      img = "1.jpg"
+      date = "2008"
+      title = "Our Humble Beginnings"
+      description = "We started working for a forensic engineering company. Times were exciting as we were able to help people with our engineering skills."
+
+    [[params.about.events]]
+      img = "2.jpg"
+      date = "March 2011"
+      title = "Repetition"
+      description = "We noticed an unfortunate pattern. People were losing their homes, their businesses, their loved ones and their property to preventable issues."
+
+    [[params.about.events]]
+      img = "3.jpg"
+      date = "December 2016"
+      title = "Gained Experience"
+      description = "The loses continued. Billions of dollars were spent on claims. Hundreds of thousands of people lost their homes, belongings and loved ones. Collectively, we had investigated over 1000 product failures. The 1000th product tipped us over the top."
+
+    [[params.about.events]]
+      img = "4.jpg"
+      date = "July 2019"
+      title = "Mitigateway"
+      description = "We realized that instead of being there after disaster strikes, we had enough knowledge, experience and ingenuity to prevent the disaster. We created the company to keep people and their belongings safe."
+
+
+  # Team section
+  [params.team]
+    enable = false
+    # Possibility to center items
+    #center = true
+    title = "Our amazing team"
+    subtitle = "Who are we?"
+    description = "Our unique and out of the box thinking drew us to the forensic industry. While here, we realized the industry could use a little out of the box help. We have the perfect complementary set of skills to provide that help."
+
+    # All team member's pictures are stored under 'static/img/team'.
+    # Replace them with your own too.
+    # Suggestion: Image size should be at least 360px*360px or the alignment might be affected.
+    [[params.team.members]]
+      img = "ben.jpg"
+      name = "Ben Desclouds"
+      position = "Business Development"
+      #reportsTo = "CTO"
+      livesIn = "[Toronto, Canada](#some-maps-url)"
+      # For bio markdown and even multiline strings are available.
+      bio = """Forensic engineer who integrates technical knowledge with business skills to fuel strategic and innovative solutions. Once fixed a toilet using only a pencil."""
+      social = [
+        ["fa-envelope", "mailto:ben@mitigateway.com"],
+        ["fa-linkedin", "https://www.linkedin.com/in/bendesclouds/"]
+      ]
+
+    [[params.team.members]]
+      img = "meg.jpg"
+      name = "Meaghen Gutelius"
+      position = "Lead Marketer"
+      #reportsTo = "CTO"
+      livesIn = "[Toronto, Canada](#some-maps-url)"
+      # For bio markdown and even multiline strings are available.
+      bio = """Experienced marketer with a passion for people and project management. Will travel far distances for good beer."""
+      social = [
+        ["fa-envelope", "mailto:meg@mitigateway.com"],
+        ["fa-twitter", "https://twitter.com/meaghengut"],
+        ["fa-linkedin", "https://www.linkedin.com/in/meaghengutelius/"]
+      ]
+
+    [[params.team.members]]
+      img = "paul.jpg"
+      name = "Paul Okrutny"
+      position = "Founder - COO"
+      #reportsTo = "CTO"
+      livesIn = "[Toronto, Canada](#some-maps-url)"
+      # For bio markdown and even multiline strings are available.
+      bio = """Forensic engineer, co-founder of a property management firm and investor. Once traded a TV for a computer monitor to increase his efficiency. """
+      social = [
+        ["fa-envelope", "mailto:paul@mitigateway.com"],
+        ["fa-linkedin", "https://www.linkedin.com/in/paulokrutny/"]
+      ]
+
+    [[params.team.members]]
+      img = "glen.jpg"
+      name = "Glen Myrland"
+      position = "Founder - CTO"
+      #reportsTo = "CTO"
+      livesIn = "[Toronto, Canada](#some-maps-url)"
+      # For bio markdown and even multiline strings are available.
+      bio = """Experienced solutions developer in the forensic industry specializing in data science and analytics. Tasks are nice, but he will write code so you do not have to do it twice."""
+      social = [
+        ["fa-envelope", "mailto:glen@mitigateway.com"],
+        ["fa-github", "https://github.com/gmyrland"],
+        ["fa-linkedin", "https://www.linkedin.com/in/gmyrland/"]
+      ]
+
+  # Client section
+    [params.clients_list]
+      enable = true
+      # Possibility to center items
+      center = true
+      # Optional client title specifying the involvement
+      title = "Some insurance companies operating in Canada"
+
+      # All the clients' logos are stored under 'static/img/logos'.
+      # Replace them with your clients's logos.
+      # Suggestion: .svg in the size of 280px*80px looks good
+      [[params.clients]]
+        logo = "intact.png"
+        link = "#"
+
+      [[params.clients]]
+        logo = "aviva.png"
+        link = "#"
+
+      [[params.clients]]
+        logo = "tdinsurance.png"
+        link = "#"
+
+      [[params.clients]]
+        logo = "desjardains.png"
+        link = "#"
+
+  # Contact section
+  [params.contact]
+    enable = true
+    title = "Contact us"
+    subtitle  = "We promise to get back to you as soon as we can."
+    buttonText = "Send message"
+
+    # Since this template is static, the contact form uses www.formspree.io as a
+    # proxy. The form makes a POST request to their servers to send the actual
+    # email. Visitors can send up to a 1000 emails each month for free.
+    #
+    # What you need to do for the setup?
+    #
+    # - set your email address under 'email' below
+    # - upload the generated site to your server
+    # - send a dummy email yourself to confirm your account
+    # - click the confirm link in the email from www.formspree.io
+    # - you're done. Happy mailing!
+
+    # It is possible to substitute formspring with other providers
+    # as an example the mailout plugin from caddy.
+    # Provide the post URL for the form and depending on the provider
+    # add some custom JS script to finish the implementation.
+    # postURL = "https://example.com/mailout/"
+
+    email = "paul@mitigateway.com"
+
+    # Success and error message overwrite for async contact form
+    thanks = "Thank you for awesomely contacting us."
+    error = "Message could not be send. Please contact us at admin@mitigateway.com instead."
+
+    # 'warning' defines error messages for invalid inputs
+    [params.contact.form.name]
+      text = "Your Name *"
+      warning = "Please enter your name."
+
+    [params.contact.form.email]
+      text = "Your Email *"
+      warning = "Please enter your email address."
+
+    # [params.contact.form.phone]
+    #   text = "Your Phone *"
+    #   warning = "Please enter your phone number."
+
+    [params.contact.form.message]
+      text = "Your Message *"
+      warning = "Please enter a message."
+
+      # Add optional form fields to identify contact forms
+      #[[params.contact.form.hidden]]
+      #  name = "someID"
+      #  value = "example.com"
+      #
+      #[[params.contact.form.hidden]]
+      # Special values for name such as "page" and "site" will be autofilled
+      #  name = "page"
+
+  # Footer section
+  [params.footer]
+    enable = true
+    copyright = "Copyright 2019 (c) - Mitigateway(TM)"
+
+    [[params.footer.social]]
+      icon = "fa-twitter"
+      link = "#"
+
+    [[params.footer.social]]
+      icon = "fa-facebook"
+      link = "#"
+
+    [[params.footer.social]]
+      icon = "fa-linkedin"
+      link = "#"
+
+    [[params.footer.quicklinks]]
+      text = "Privacy Policy"
+      link = "#"
+
+    [[params.footer.quicklinks]]
+      text = "Terms of Use"
+      link = "#"
