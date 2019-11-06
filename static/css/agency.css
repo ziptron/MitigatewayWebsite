@@ -964,3 +964,11 @@ img::-moz-selection {
 body {
     webkit-tap-highlight-color: #45b3e7;
 }-
+
+
+video {
+  position: relative;
+  width: 20%    !important;
+  height: 20#   !important;
+  top: 0; 
+}
