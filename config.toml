@@ -22,7 +22,7 @@ googleAnalytics = "UA-143004297-1"
   description = "Protecting the things you care about."
 
   # Link custom assets relative to /static
-  custom_css = []
+  custom_css = ["css/custom.css"]
   custom_js  = []
   favicon    = "favicon.ico"
 
