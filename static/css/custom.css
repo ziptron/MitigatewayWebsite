@@ -10,6 +10,8 @@
   display: flex;
   justify-content: space-between;
   padding-top: 50px;
+  padding-bottom: 25px;
+  width: 100%;
   height: 100%;
   background-color: #0099ff;
 }
@@ -37,10 +39,9 @@
   font-size: 46px;
   font-weight: 700;
   display:inline-block;
-  margin: 0px 0px 5px 0px;
   color: #FFF;
   text-align: center;
-  width: 100%;
+  margin-top: 0px;
   padding-right:0px;
   padding-top:0px;
 
@@ -192,7 +193,7 @@
 }
 
 .sign-up .content {
-  width:85%;
+  width:100%;
   margin: 0 auto;
   color: #fff;
 }
@@ -325,22 +326,28 @@
 .sign-up ol {
   color: #ccc;
   list-style-type: none;
+  
 }
 
 .sign-up ol li {
   position: relative;
   font: bold italic 45px/1.5 Roboto Slab;
   margin-bottom: 20px;
+  margin-left: 0px;
+  padding-left: 0px;
 }
 
 .sign-up li p {
   font: 22px/1.5 Roboto Slab;
-  padding-left: 60px;
+  padding-left: 0px;
   color: #fff;
+  text-align: left;
 }
 
 .sign-up .content span {
-  position: absolute;
+  position: relative;
+  margin-left: -60%;
+  margin-bottom: -100%;
 }
 
 .sign-up .header {
@@ -351,8 +358,6 @@
 
 .sign-up .header img {
   width: 300px;
-
-
 }
 
 .sign-up .footer {
