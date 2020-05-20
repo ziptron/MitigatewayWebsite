@@ -58,6 +58,12 @@
             <a class="page-scroll" href="{{ .Site.BaseURL }}#team">{{ with .Site.Params.navigation.team }}{{ . }}{{ end }}</a>
           </li>
         {{ end }}
+		
+		{{ if .Site.Params.signUp.enable }}
+          <li>
+            <a class="page-scroll" href="{{ .Site.BaseURL }}#signUp">{{ with .Site.Params.navigation.signUp }}{{ . }}{{ end }}</a>
+          </li>
+        {{ end }}
 
         {{ if .Site.Params.contact.enable }}
           <li>

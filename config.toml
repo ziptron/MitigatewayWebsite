@@ -78,7 +78,7 @@ googleAnalytics = "UA-143004297-1"
     # To change the background image of the hero, replace 'header-bg.jpg' in
     # the 'static/img' folder.
     #title = "mitigateway"
-    subtitle = "We Protect the things you care about"
+    subtitle = "We protect the things you care about"
     buttonText = "Tell me more"
 
 
@@ -162,7 +162,7 @@ googleAnalytics = "UA-143004297-1"
 
   # Team section
   [params.team]
-    enable = false
+    enable = true
     # Possibility to center items
     #center = true
     title = "Our amazing team"
@@ -225,6 +225,33 @@ googleAnalytics = "UA-143004297-1"
         ["fa-github", "https://github.com/gmyrland"],
         ["fa-linkedin", "https://www.linkedin.com/in/gmyrland/"]
       ]
+
+  # Client section
+    [params.signUp]
+      enable = true
+      # Possibility to center items
+      center = true
+      # Optional client title specifying the involvement
+      title = "Some insurance companies operating in Canada"
+
+      # All the clients' logos are stored under 'static/img/logos'.
+      # Replace them with your clients's logos.
+      # Suggestion: .svg in the size of 280px*80px looks good
+      [[params.clients]]
+        logo = "intact.png"
+        link = "#"
+
+      [[params.clients]]
+        logo = "aviva.png"
+        link = "#"
+
+      [[params.clients]]
+        logo = "tdinsurance.png"
+        link = "#"
+
+      [[params.clients]]
+        logo = "desjardains.png"
+        link = "#"
 
   # Client section
     [params.clients_list]

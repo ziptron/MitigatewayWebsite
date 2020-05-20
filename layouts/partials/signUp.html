@@ -1,0 +1,98 @@
+{{ "<!-- Clients Aside -->" | safeHTML }}
+<aside class="clients">
+  <div class="container">
+    <div class="row">
+        <br>
+        <h2 class="section-heading">{{ with .Site.Params.signUp.title }}{{ . | markdownify }}{{ end }}</h2>
+        <h3 class="section-subheading text-muted">{{ with .Site.Params.signUp.subtitle }}{{ . | markdownify }}{{ end }}</h3>
+<body style="background-color: #0099ff">
+	<div  class='header'><img src="2020-Mitigateway_Logo_white-Cropped.svg"></div>
+	<div class="pure-g container">
+
+    <div class="pure-u-1 pure-u-md-3-5" style="background-color: #0099ff">
+	
+		<div class="wrapper fadeInDown">
+		
+		<div class='content'>
+    		<h1 style="font-family: 'Roboto Slab'">Early Access Info</h1>
+			
+			
+			<div>
+  <ol>
+    <li><span>1.</span><p>For early access, submit your name and the address of the property you wish to inspect.  </p></li>
+    <li><span>2.</span><p>When Mitigateway comes to your neighbourhood, we will email you a link to download our home self-inspection tool. The link will help you install our tool on your smartphone.  </p></li>
+    <li><span>3.</span><p>Perform a simple home inspection using your phone and receive feedback on how to keep your home and family safe.  </p></li>
+  </ol> 
+</div>	
+    		
+
+				<h4><i class="fa fa-android" style="font-size:48px"></i>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-apple" style="font-size:48px"></i></h4>
+			
+			</div>
+				
+    	</div>
+    </div>
+    <div class="pure-u-1 pure-u-md-2-5" style="background-color: #0099ff;"> <div class="wrapper fadeInDown">
+  <div id="formContent">
+  	<form>
+
+    <!-- Tabs Titles -->
+    <h2 class="">Early Access Sign Up</h2>
+ 
+
+
+    <!-- Login Form -->
+
+      <input type="text" id="name" class="fadeIn second" name="name" placeholder="John Doe" autocomplete="name" required autofocus>
+      <input type="text" id="email" class="fadeIn third" name="email" placeholder="email@address.com" autocomplete="email" required>
+      <input type="text" id="address" class="fadeIn fourth" name="address" placeholder="121 Main St, Toronto, Ontario M5J 2N4" required>
+      <input type="text" id="findus" class="fadeIn fifth" name="findus" placeholder="How did you find us?">
+
+
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <input type="submit" class="fadeIn fourth" value="Get early access">
+    </div>
+</form>
+
+  </div>
+
+</div>
+
+<script>
+// This sample uses the Autocomplete widget to help the user select a
+// place, then it retrieves the address components associated with that
+// place, and then it populates the form fields with those details.
+// This sample requires the Places library. Include the libraries=places
+// parameter when you first load the API. For example:
+// <script
+// src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+
+function initAutocomplete() {
+  // Create the autocomplete object, restricting the search predictions to
+  // geographical location types.
+  var input = document.getElementById('address');
+    var autocomplete = new google.maps.places.Autocomplete(input);
+
+  // Avoid paying for data that you don't need by restricting the set of
+  // place fields that are returned to just the address components.
+  autocomplete.setFields(['address_component']);
+
+  // When the user selects an address from the drop-down, populate the
+  // address fields in the form.
+
+
+}
+    </script>
+	
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDhDm3qm1VskUtwxyOZZ2Jen6HTwFJ6oE&libraries=places&callback=initAutocomplete"
+        async defer></script>
+		
+</body>
+</html>
+
+    </div>
+  </div>
+</aside>
