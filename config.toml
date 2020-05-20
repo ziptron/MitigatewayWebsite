@@ -53,6 +53,7 @@ googleAnalytics = "UA-143004297-1"
     portfolio = "Portfolio"
     about = "About"
     team = "Team"
+	signUp = "Sign Up"
     contact = "Contact"
 
     # Add custom links. Those can be pre- and postpended to the default menu above.
@@ -162,7 +163,7 @@ googleAnalytics = "UA-143004297-1"
 
   # Team section
   [params.team]
-    enable = true
+    enable = false
     # Possibility to center items
     #center = true
     title = "Our amazing team"
@@ -232,26 +233,8 @@ googleAnalytics = "UA-143004297-1"
       # Possibility to center items
       center = true
       # Optional client title specifying the involvement
-      title = "Some insurance companies operating in Canada"
+      title = "Sign Up"
 
-      # All the clients' logos are stored under 'static/img/logos'.
-      # Replace them with your clients's logos.
-      # Suggestion: .svg in the size of 280px*80px looks good
-      [[params.clients]]
-        logo = "intact.png"
-        link = "#"
-
-      [[params.clients]]
-        logo = "aviva.png"
-        link = "#"
-
-      [[params.clients]]
-        logo = "tdinsurance.png"
-        link = "#"
-
-      [[params.clients]]
-        logo = "desjardains.png"
-        link = "#"
 
   # Client section
     [params.clients_list]
