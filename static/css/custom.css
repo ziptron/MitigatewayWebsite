@@ -1,7 +1,10 @@
 
 .sign-up {
   margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  background-color: #0099ff;
+  margin-bottom: -40px;
+  padding: 20px 0 30px;
 }
 .sign-up .container {
   display: flex;

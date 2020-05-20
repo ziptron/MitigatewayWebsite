@@ -3,14 +3,10 @@
   <div class="container">
     <div class="row">
 	<div class="col-lg-12 text-center">
-        <br>
-        <h2 class="section-heading">{{ with .Site.Params.signUp.title }}{{ . | markdownify }}{{ end }}</h2>
-        <h3 class="section-subheading text-muted">{{ with .Site.Params.signUp.subtitle }}{{ . | markdownify }}{{ end }}</h3>
-<div style="background-color: #0099ff" class='sign-up'>
-	<div  class='header'><img src="2020-Mitigateway_Logo_white-Cropped.svg"></div>
+<div class='sign-up'>
 	<div class="pure-g container">
 
-    <div class="pure-u-1 pure-u-md-3-5" style="background-color: #0099ff">
+    <div class="pure-u-1 pure-u-md-1-2" style="background-color: #0099ff">
 
 		<div class="wrapper fadeInDown">
 
@@ -33,7 +29,7 @@
 
     	</div>
     </div>
-    <div class="pure-u-1 pure-u-md-2-5" style="background-color: #0099ff;">
+    <div class="pure-u-1 pure-u-md-1-2" style="background-color: #0099ff;">
       <div class="wrapper fadeInDown">
   <div id="formContent">
   	<form>
@@ -45,7 +41,7 @@
 
     <!-- Login Form -->
 
-      <input type="text" id="name" class="fadeIn second" name="name" placeholder="John Doe" autocomplete="name" required autofocus>
+      <input type="text" id="name" class="fadeIn second" name="name" placeholder="John Doe" autocomplete="name" required>
       <input type="text" id="email" class="fadeIn third" name="email" placeholder="email@address.com" autocomplete="email" required>
       <input type="text" id="address" class="fadeIn fourth" name="address" placeholder="121 Main St, Toronto, Ontario M5J 2N4" required>
       <input type="text" id="findus" class="fadeIn fifth" name="findus" placeholder="How did you find us?">
@@ -63,33 +59,15 @@
 </div>
 
 <script>
-// This sample uses the Autocomplete widget to help the user select a
-// place, then it retrieves the address components associated with that
-// place, and then it populates the form fields with those details.
-// This sample requires the Places library. Include the libraries=places
-// parameter when you first load the API. For example:
-// <script
-// src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
-
-
-function initAutocomplete() {
-  // Create the autocomplete object, restricting the search predictions to
-  // geographical location types.
-  var input = document.getElementById('address');
+  function initAutocomplete() {
+    var input = document.getElementById('address');
     var autocomplete = new google.maps.places.Autocomplete(input);
 
-  // Avoid paying for data that you don't need by restricting the set of
-  // place fields that are returned to just the address components.
-  autocomplete.setFields(['address_component']);
+    autocomplete.setFields(['address_component']);
+  }
+</script>
 
-  // When the user selects an address from the drop-down, populate the
-  // address fields in the form.
-
-
-}
-    </script>
-
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDhDm3qm1VskUtwxyOZZ2Jen6HTwFJ6oE&libraries=places&callback=initAutocomplete"
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDhDm3qm1VskUtwxyOZZ2Jen6HTwFJ6oE&libraries=places&callback=initAutocomplete"
         async defer></script>
 
 </div>
