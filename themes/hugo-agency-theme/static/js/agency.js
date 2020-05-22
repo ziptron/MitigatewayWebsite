@@ -61,11 +61,6 @@ $('form[id=contactForm]').submit(function(){
   return false;
 });
 
-// Contact form validation
-$.validate({
-  modules : 'html5, toggleDisabled'
-});
-
 function onContactCaptcha($form) {
   $('form#contactForm').submit();
 }

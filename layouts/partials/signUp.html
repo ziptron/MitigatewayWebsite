@@ -33,7 +33,7 @@
     <div class="pure-u-1 pure-u-md-1-2" style="background-color: #0099ff;">
       <div class="wrapper fadeInDown">
   <div id="formContent">
-  	<form>
+  	<form id='signupForm'>
 
     <!-- Tabs Titles -->
     <h2 class="">Early Access Sign Up</h2>
@@ -55,7 +55,7 @@
 
     <!-- Remind Passowrd -->
     <div id="formFooter">
-      <input type="submit" class="fadeIn fourth" value="Get early access">
+      <input type="submit" class="fadeIn fourth form-btn" value="Get early access" id='signupButton'>
     </div>
   </div>
 </form>
@@ -76,6 +76,26 @@
 
 $(document).ready(function() {
 
+  $("#signupButton").removeAttr("disabled");
+  $("#signupButton").removeClass("disabled");
+
+  var $form = $("#signupForm");
+  var $submitbutton = $("#signupButton");
+
+  setTimeout(
+  function()
+  {
+     $("#signupButton").removeAttr("disabled");
+  $("#signupButton").removeClass("disabled");
+  }, 1000);
+
+$form.on("blur", "input", () => {
+
+    $submitbutton.removeAttr("disabled");
+    $("#signupButton").removeClass("disabled");
+
+});
+
  $('form').submit(function(event) {
       var formData = {
         'signup': {
@@ -85,6 +105,24 @@ $(document).ready(function() {
           'found_us'             : $('input[name=find_us]').val(),
         }
       };
+
+      var errorMsg = null;
+
+      if(!$('input[name=name]').val()) {
+        errorMsg += "<p style=\"font-size: 18px;color:red;\">Your name is required</p>";
+      }
+
+      if(!$('input[name=email]').val()) {
+        errorMsg += "<p style=\"font-size: 18px;color:red;\">Your email is required</p>";
+      }
+
+      if(!$('input[name=address]').val()) {
+        errorMsg += "<p style=\"font-size: 18px;color:red;\">Your address is required</p>";
+      }
+
+      if(errorMsg) {
+        $('.status').html(errorMsg);
+      } else {
 
       $.ajax({
           type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
@@ -109,8 +147,10 @@ $(document).ready(function() {
      }
       });
 
-      // stop the form from submitting the normal way and refreshing the page
+    }
+// stop the form from submitting the normal way and refreshing the page
       event.preventDefault();
+
         });
 
   });
