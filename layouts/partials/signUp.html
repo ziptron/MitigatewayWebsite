@@ -46,8 +46,8 @@
 
     <!-- Login Form -->
     <div class='formBody'>
-      <input type="text" id="name" class="fadeIn second" name="name" placeholder="John Doe" autocomplete="name" required>
-      <input type="text" id="email" class="fadeIn third" name="email" placeholder="email@address.com" autocomplete="email" required>
+      <input type="text" id="name" class="fadeIn second" name="name" placeholder="John Doe"  required>
+      <input type="text" id="email" class="fadeIn third" name="email" placeholder="email@address.com" required>
       <input type="text" id="address" class="fadeIn fourth" name="address" placeholder="121 Main St, Toronto, Ontario M5J 2N4" required>
       <input type="text" id="find_us" class="fadeIn fifth" name="find_us" placeholder="How did you find us?">
 
@@ -132,18 +132,13 @@ $form.on("blur", "input", () => {
           contentType: 'application/json; charset=utf-8',
           encode      : true,
           success: function(res){
-            if(res['status'] === 'SUCCESS') {
-              $('.status').html('<p style="font-size: 18px;">Thank you for signing up. We will be contacting you soon.</p>');
-              $('.formBody').hide();
-            } else {
-              $('.status').html('<p style="font-size: 18px;color:red;">We\'re sorry, there was an error submitting your signup. Please try again.</p>');
-            }
-
-            console.log('ok', res)
-          },
+			$('.status').html('<p style="font-size: 18px;">Thank you! We will contact you as soon as our services are available in your area. </p>');
+			$('.formBody').hide();
+            },
           error: function(xhr, status, error){
-            var errorMessage = xhr.status + ': ' + xhr.statusText
-            console.log('Error - ' + errorMessage);
+			$('.status').html('<p style="font-size: 18px;color:red;">We\'re sorry, there was an error submitting your signup. Please try again.</p>');
+			var errorMessage = xhr.status + ': ' + xhr.statusText
+			console.log('Error - ' + errorMessage);
      }
       });
 
