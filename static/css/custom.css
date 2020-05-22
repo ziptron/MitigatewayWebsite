@@ -326,7 +326,7 @@
 .sign-up ol {
   color: #ccc;
   list-style-type: none;
-  
+
 }
 
 .sign-up ol li {
@@ -364,4 +364,13 @@
   text-align: center;
   width:100%;
   background-color: #0099ff;
+}
+
+.sign-up .status p {
+  font-size: 16px;
+  color: #969696;
+  text-align: center;
+  font-family: Roboto Slab;
+  margin-top:-10px;
+  margin-bottom:10px;
 }

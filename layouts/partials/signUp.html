@@ -38,14 +38,18 @@
     <!-- Tabs Titles -->
     <h2 class="">Early Access Sign Up</h2>
 
-
+    <div class='status' style='
+  color: #969696;
+  text-align: center;
+  margin-top:-30px;
+  margin-bottom:25px;'></div>
 
     <!-- Login Form -->
-
+    <div class='formBody'>
       <input type="text" id="name" class="fadeIn second" name="name" placeholder="John Doe" autocomplete="name" required>
       <input type="text" id="email" class="fadeIn third" name="email" placeholder="email@address.com" autocomplete="email" required>
       <input type="text" id="address" class="fadeIn fourth" name="address" placeholder="121 Main St, Toronto, Ontario M5J 2N4" required>
-      <input type="text" id="findus" class="fadeIn fifth" name="findus" placeholder="How did you find us?">
+      <input type="text" id="find_us" class="fadeIn fifth" name="find_us" placeholder="How did you find us?">
 
 
 
@@ -53,6 +57,7 @@
     <div id="formFooter">
       <input type="submit" class="fadeIn fourth" value="Get early access">
     </div>
+  </div>
 </form>
 
   </div>
@@ -66,6 +71,49 @@
 
     autocomplete.setFields(['address_component']);
   }
+
+
+
+$(document).ready(function() {
+
+ $('form').submit(function(event) {
+      var formData = {
+        'signup': {
+          'name'              : $('input[name=name]').val(),
+          'email'             : $('input[name=email]').val(),
+          'address'             : $('input[name=address]').val(),
+          'found_us'             : $('input[name=find_us]').val(),
+        }
+      };
+
+      $.ajax({
+          type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
+          url         : 'https://api.mitigateway.com/api/v1/signup', // the url where we want to POST
+          data        : JSON.stringify(formData), // our data object
+          dataType    : 'json', // what type of data do we expect back from the server
+          contentType: 'application/json; charset=utf-8',
+          encode      : true,
+          success: function(res){
+            if(res['status'] === 'SUCCESS') {
+              $('.status').html('<p style="font-size: 18px;">Thank you for signing up. We will be contacting you soon.</p>');
+              $('.formBody').hide();
+            } else {
+              $('.status').html('<p style="font-size: 18px;color:red;">We\'re sorry, there was an error submitting your signup. Please try again.</p>');
+            }
+
+            console.log('ok', res)
+          },
+          error: function(xhr, status, error){
+            var errorMessage = xhr.status + ': ' + xhr.statusText
+            console.log('Error - ' + errorMessage);
+     }
+      });
+
+      // stop the form from submitting the normal way and refreshing the page
+      event.preventDefault();
+        });
+
+  });
 </script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDhDm3qm1VskUtwxyOZZ2Jen6HTwFJ6oE&libraries=places&callback=initAutocomplete"
