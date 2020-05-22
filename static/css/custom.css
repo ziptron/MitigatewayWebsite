@@ -235,8 +235,14 @@
     transform: none;
   }
 }
+/*
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+}
 
-/* Simple CSS3 Fade-in Animation */
 @-webkit-keyframes endBrowserAutofill { from { opacity:0; } to { opacity:1; } }
 @-moz-keyframes endBrowserAutofill { from { opacity:0; } to { opacity:1; } }
 @keyframes endBrowserAutofill { from { opacity:0; } to { opacity:1; } }
@@ -284,7 +290,7 @@
   -webkit-animation-delay: 1.2s;
   -moz-animation-delay: 1.2s;
   animation-delay: 1.2s;
-}
+}*/
 
 /* Simple CSS3 Fade-in Animation */
 .underlineHover:after {
