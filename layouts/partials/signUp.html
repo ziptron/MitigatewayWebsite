@@ -17,6 +17,7 @@
 
 			<div>
 			  <ol>
+				<li><p>Our service is customized to a specific geographical area because homes in the Yukon require different maintenance than homes in Florida. While we are ready to serve many areas, we are not yet ready to serve them all.</p></li> 
 				<li><p>Submit your name and the address of the property you wish to inspect.  </p></li>
 				<li><p>When Mitigateway comes to your neighbourhood, we will email you a link to download our home self-inspection tool. The link will help you install our tool on your smartphone.  </p></li>
 				<li><p>Perform a simple home inspection using your phone and receive feedback on how to keep your home and family safe.  </p></li>
@@ -46,9 +47,12 @@
 
     <!-- Login Form -->
     <div class='formBody'>
-      <input type="text" id="name" class="fadeIn second" name="name" placeholder="John Doe"  required>
-      <input type="text" id="email" class="fadeIn third" name="email" placeholder="email@address.com" required>
-      <input type="text" id="address" class="fadeIn fourth" name="address" placeholder="121 Main St, Toronto, Ontario M5J 2N4" required>
+	  
+      <input type="text" id="name" class="fadeIn second" name="name" placeholder="Name"  required>
+      <input type="text" id="email" class="fadeIn third" name="email" placeholder="Email" required>
+      <input type="text" id="city" class="fadeIn fourth" name="city" placeholder="Home City" required>
+      <input type="text" id="address" class="fadeIn fourth" name="address" placeholder="Home Address" required>
+
       <input type="text" id="find_us" class="fadeIn fifth" name="find_us" placeholder="How did you find us?">
 
 
@@ -102,6 +106,7 @@ $form.on("blur", "input", () => {
           'name'              : $('input[name=name]').val(),
           'email'             : $('input[name=email]').val(),
           'address'             : $('input[name=address]').val(),
+		  'city'             : $('input[name=city]').val(),
           'found_us'             : $('input[name=find_us]').val(),
         }
       };
@@ -132,7 +137,7 @@ $form.on("blur", "input", () => {
           contentType: 'application/json; charset=utf-8',
           encode      : true,
           success: function(res){
-			$('.status').html('<p style="font-size: 18px;">Thank you! We will contact you as soon as our services are available in your area. </p>');
+			$('.status').html('<p style="font-size: 18px;">Thank you! We will contact you as soon as our services are available in your area.  </p>');
 			$('.formBody').hide();
             },
           error: function(xhr, status, error){
